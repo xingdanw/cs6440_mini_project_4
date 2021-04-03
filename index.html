@@ -1,0 +1,145 @@
+
+<!doctype html>
+<html>
+<head>
+	<title>Breast Cancer Prediction</title>
+	<meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+
+<style>
+    
+    body {
+        font-size: 16px;
+        min-width: 1220px;
+    }
+
+    div.tooltip {
+        position: absolute;
+        text-align: left;   
+        min-width: 50px;
+        /*height: 20px;*/
+        /*padding: 2px;*/
+        font: 10px Helvetica;
+        text-align: left;
+        padding: 10px 10;
+        background: #d8b36e;
+        border: 1px solid black;
+        border-radius: 4px;
+        pointer-events: none;
+    }
+
+    #h1 {
+        position: absolute;
+        left: 200px;
+        top: -40px;
+        font-size: 50px;
+    }  
+
+    #header1 {
+        position: absolute;
+        left: 50px;
+        top: 60px;
+        height: 420px;
+        width: 400px;
+        border: 1px solid #ccc;
+    }   
+
+    #input1 {
+        position: absolute;
+        left: 60px;
+        top: 90px;
+        height: 380px;
+        width: 400px;
+    }  
+    #header2 {
+        position: absolute;
+        left: 500px;
+        top: 60px;
+        height: 420px;
+        width: 400px;
+        border: 1px solid #ccc;
+    }   
+    #input2 {
+        position: absolute;
+        left: 510px;
+        top: 90px;
+        height: 380px;
+        width: 400px;
+    }  
+
+    #input3 {
+        position: absolute;
+        left: 50px;
+        top: 500px;
+        height: 100px;
+        width: 400px;
+    }  
+
+    #result {
+        position: absolute;
+        left: 50px;
+        top: 650px;
+        height: 600px;
+        width: 800px;
+        font-size: 22px;
+    }  
+
+    #submit {
+        position: absolute;
+        left: 100px;
+        top: 550px;
+        background-color: #164cb1; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+    }
+
+</style>
+</head>
+
+<body>
+    <p id="h1">Breast Cancer Prediction</p>
+    <p id="header1">Please input test result</p>
+    <p id="header2">Optional input</p>
+    <p id="input1">
+        Radius (mean):<input type="text" id="Radius_mean" value=""><br/><br/>
+        Texture (mean):<input type="text" id="Texture_mean" value=""><br/><br/>
+        Perimeter (mean):<input type="text" id="Perimeter_mean" value=""><br/><br/>
+        Area (mean):<input type="text" id="Area_mean" value=""><br/><br/>
+        Smoothness (mean):<input type="text" id="Smoothness_mean" value=""><br/><br/>
+        Compactness (mean):<input type="text" id="Compactness_mean" value=""><br/><br/>
+        Concavity (mean):<input type="text" id="Concavity_mean" value=""><br/><br/>
+        Concave Points (mean):<input type="text" id="ConcavePoints_mean" value=""><br/><br/>
+        Symmetry (mean):<input type="text" id="Symmetry_mean" value=""><br/><br/>
+        Fractal Dimension (mean):<input type="text" id="FractalDimension_mean" value=""><br/><br/>
+    </p>
+    <p id="input2">
+        Radius (sd):<input type="text" id="Radius_sd" value=""><br/><br/>
+        Texture (sd):<input type="text" id="Texture_sd" value=""><br/><br/>
+        Perimeter (sd):<input type="text" id="Perimeter_sd" value=""><br/><br/>
+        Area (sd):<input type="text" id="Area_sd" value=""><br/><br/>
+        Smoothness (sd):<input type="text" id="Smoothness_sd" value=""><br/><br/>
+        Compactness (sd):<input type="text" id="Compactness_sd" value=""><br/><br/>
+        Concavity (sd):<input type="text" id="Concavity_sd" value=""><br/><br/>
+        Concave Points (sd):<input type="text" id="ConcavePoints_sd" value=""><br/><br/>
+        Symmetry (sd):<input type="text" id="Symmetry_sd" value=""><br/><br/>
+        Fractal Dimension (sd):<input type="text" id="FractalDimension_sd" value=""><br/><br/>
+    </p>
+    <p id="input3">
+        <label for="cluster">Choose a cluster number:</label>
+        <select name="cluster" id="cluster">
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </p>
+    <button id='submit' onclick="submit()">Submit</button>
+    <p id="result"></p>
+	<script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
